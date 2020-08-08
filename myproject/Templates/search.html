@@ -1,0 +1,121 @@
+{% extends 'base.html'%}
+{% block content %}
+
+
+<br/>
+
+
+<br/>
+<div>
+
+</div>
+<br/>
+<br/>
+
+<form class="row" action="" method="POST">
+    {% csrf_token %}
+
+
+    <div class="" style="margin-left: 400px;">
+        <label>Name</label>
+        <input type="text" name="name">
+
+    </div>
+
+    <div class="" style="margin-left: 40px;">
+        <label>Hit point</label>
+        <input type="text" name="hp">
+
+    </div>
+    <div class="" style="margin-left: 40px;">
+        <label>Rarity</label>
+        <input type="text" name="r">
+
+    </div>
+
+    <input style="margin-left: 40px;" type="submit" value="Filter">
+</form>
+<body>
+<table  bgcolor="pink" border="5" ALIGN="CENTER">
+
+    {% csrf_token %}
+    <tbody>
+    <tr bgcolor="white">
+        <th>id</th>
+        <th>name</th>
+        <th>imageUrl</th>
+        <th>imageUrlHiRes</th>
+        <th>supertype</th>
+        <th>subtype</th>
+        <th>number</th>
+        <th>artist</th>
+        <th>rarity</th>
+        <th>series</th>
+        <th>set</th>
+        <th>setCode</th>
+        <th>text</th>
+        <th>nationalPokedexNumber</th>
+        <th>types</th>
+        <th>hp</th>
+        <th>retreatCost</th>
+        <th>convertedRetreatCost</th>
+        <th>attackDamage</th>
+        <th>attackCost</th>
+        <th>attackName</th>
+        <th>attackText</th>
+        <th>weaknesses</th>
+        <th>resistances</th>
+        <th>abilityName</th>
+        <th>abilityText</th>
+        <th>abilityType</th>
+        <th>evolvesFrom</th>
+
+
+    </tr>
+    {% for i in data %}
+
+    <tr>
+
+
+        <td>{{i.idd}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.imageUrl}}</td>
+        <td>{{i.imageUrlHiRes}}</td>
+        <td>{{i.supertype}}</td>
+
+        <td>{{i.subtype}}</td>
+        <td>{{i.number}}</td>
+        <td>{{i.artist }}</td>
+        <td>{{i.rarity}}</td>
+        <td>{{i.series}}</td>
+        <td>{{i.set}}</td>
+        <td>{{ i.setCode}}</td>
+        <td>{{ i.text}}</td>
+        <td>{{ i.nationalPokedexNumber}}</td>
+        <td>{{ i.types}}</td>
+        <td>{{ i.hp}}</td>
+        <td>{{ i.retreatCost}}</td>
+        <td>{{ i.convertedRetreatCost}}</td>
+        <td>{{ i.attackDamage}}</td>
+        <td>{{ i.attackCost}}</td>
+        <td>{{ i.attackName}}</td>
+        <td>{{ i.attackText}}</td>
+        <td>{{ i.weaknesses}}</td>
+        <td>{{ i.resistances}}</td>
+        <td>{{ i.abilityName}}</td>
+        <td>{{ i.abilityText}}</td>
+        <td>{{ i.abilityType}}</td>
+        <td>{{ i.evolvesFrom}}</td>
+
+
+    </tr>
+    {% endfor %}
+
+
+    </tbody>
+</table>
+
+</body>
+
+{% endblock %}
+</html>
